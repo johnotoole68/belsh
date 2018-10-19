@@ -1,7 +1,0 @@
-1  ls -la
-    2  pwd
-    3  git clone https://github.com/reingart/pyafipws
-    4  cd pyafipws/
-    5  ls -la
-    6  python2 setup.py install --user
-    7  history
