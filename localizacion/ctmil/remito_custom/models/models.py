@@ -9,5 +9,5 @@ class BelshStockPicking(models.Model):
 		barrels_ids = self.env['stock.production.lot'].search(['product_id', '=', 159])
 		raise ValidationError(barrels_ids)
 
-	barril = fields.Char('Barriles', compute=barrels_stock)
+	barril = fields.Char('Barriles', compute="barrels_stock")
 
