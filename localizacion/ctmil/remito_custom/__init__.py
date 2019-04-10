@@ -6,5 +6,5 @@
 #
 ##############################################################################
 
-#import models
+import models
 import controllers
