@@ -25,7 +25,7 @@ class BelshStockPicking(models.Model):
 
 				if locs:
 					for his in locs:
-						history.aapend(his)
+						history.append(his)
 				raise ValidationError(history)
 		else:
 			for rec in self:
