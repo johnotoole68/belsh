@@ -31,8 +31,8 @@ class BelshStockPicking(models.Model):
 				if history:
 					for res in history:
 						for h_res in res:
-							if h_red[-1].location_dest_id.id == 9:
-								barrel_data.append(h_red[-1])
+							if h_res[-1].location_dest_id.id == 9:
+								barrel_data.append(h_res[-1])
 				raise ValidationError(barrel_data)
 		else:
 			for rec in self:
