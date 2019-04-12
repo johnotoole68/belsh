@@ -9,6 +9,7 @@ class BelshStockPicking(models.Model):
 		barrels_ids = self.env['stock.production.lot'].search([('product_id', '=', 159)])
 		quant_ids = []
 		locs = []
+		history = []
 
 		if barrels_ids:
 			for rec in self:
@@ -21,7 +22,11 @@ class BelshStockPicking(models.Model):
 						for qid in qids:
 							if qid.location_id.id == 9:
 								locs.append(qid)
-				raise ValidationError(locs)
+
+				if locs:
+					for his in locs:
+						history.aapend(his)
+				raise ValidationError(history)
 		else:
 			for rec in self:
 				rec.barril = ''
