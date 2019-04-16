@@ -9,15 +9,11 @@ class BelshStockPicking(models.Model):
 		barrels_ids = self.env['stock.production.lot'].search([('product_id', '=', 159)])
 		nro_barril = ''
 		table = ''
-		quant_ids = []
-		locs = []
-		history = []
-		barrel_data = []
 
 		if barrels_ids:
 			for rec in self:
 				for barrel in barrels_ids:
-					quants_ids = []
+					quant_ids = []
 					locs = []
 					barrel_data = []
 					nro_barril = barrel.name
