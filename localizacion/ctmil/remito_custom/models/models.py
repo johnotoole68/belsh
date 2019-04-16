@@ -23,12 +23,11 @@ class BelshStockPicking(models.Model):
 
 					if quant_ids:
 						if quant_ids[-1].location_id.id == 9:
-							locs.append(quant_ids[-1])
-							raise ValidationError(locs.history_ids)
+							locs.append(quant_ids[-1].history_ids)
+							raise ValidationError(locs)
 
 					if locs:
 						if locs.history_ids:
-							raise ValidationError(locs.history_ids)
 							if locs.history_ids[-1].location_dest_id.id == 9:
 								barrel_data.append(history_ids[-1])
 
