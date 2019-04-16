@@ -32,10 +32,10 @@ class BelshStockPicking(models.Model):
 					if locs:
 						if locs[-1].location_dest_id.id == 9:
 							barrel_data.append(locs[-1])
-							raise ValidationError(barrel_data)
 
 					if barrel_data:
-						table = str(barrel_data.name)
+						if rec.partner_id == barrel_data.partner_id:
+							table = str(barrel_data.name)
 					"""if barrel_data:
 						if barrel_data.partner_id == rec.partner_id:
 							table = '<table><tr><th>Orden de Venta</th><th>Nro Factura</th><th>Fecha Factura</th><th>Nro Remito</th><th>Nro Barril</th><th>Antiguedad</th><th>Retira</th><th>Firma</th></tr>'
