@@ -52,3 +52,4 @@ class BelshStockPicking(models.Model):
 
 	barril = fields.Html('Barriles', compute=_barrels_stock)
 
+
