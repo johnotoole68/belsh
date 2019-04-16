@@ -1,4 +1,0 @@
-[submodule "OCA/geospatial"]
-	path = OCA/geospatial
-	url = git@github.com:OCA/geospatial.git
-	branch = 10.0
