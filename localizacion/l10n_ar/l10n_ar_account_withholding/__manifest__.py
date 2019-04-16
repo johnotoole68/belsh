@@ -51,7 +51,7 @@
     ],
     'external_dependencies': {
         'python': [
-            'client',
+            #'client',
             'pysimplesoap',
             'pyafipws'
             #'pyafipws'
