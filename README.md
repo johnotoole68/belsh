@@ -1,2 +1,2 @@
 # belsh
-# pip install client --user
+# pip2 install client --user
