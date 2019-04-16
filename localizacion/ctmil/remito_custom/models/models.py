@@ -22,21 +22,15 @@ class BelshStockPicking(models.Model):
 						quant_ids.append(barrel.quant_ids)
 
 					if quant_ids:
-						for qids in quant_ids:
-							for qid in qids:
-								if qid.location_id.id == 9:
-									locs.append(qid)
+						if quant_ids[-1].location_id.id == 9:
+								locs.append(qid)
 
 					if locs:
-						for his in locs:
-							history.append(his.history_ids)
+						if locs[-1].location_dest_id.id == 9:
+								barrel_data.append(locs[-1])
 
-					if history:
-						for res in history:
-							for h_res in res:
-								if h_res[-1].location_dest_id.id == 9:
-									barrel_data.append(h_res[-1])
-
+					if barrel_data:
+						table = str(barrel_data.name)
 					"""if barrel_data:
 						if barrel_data.partner_id == rec.partner_id:
 							table = '<table><tr><th>Orden de Venta</th><th>Nro Factura</th><th>Fecha Factura</th><th>Nro Remito</th><th>Nro Barril</th><th>Antiguedad</th><th>Retira</th><th>Firma</th></tr>'
@@ -46,6 +40,7 @@ class BelshStockPicking(models.Model):
 					else:
 						rec.barril = ''"""
 
+			rec.barril = table
 		else:
 			for rec in self:
 				rec.barril = ''
