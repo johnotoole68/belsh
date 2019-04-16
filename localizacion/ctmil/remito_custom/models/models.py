@@ -38,6 +38,7 @@ class BelshStockPicking(models.Model):
 									barrel_data.append(h_res[-1])
 
 					if barrel_data:
+						raise ValidationError(rec.partner_id)
 						if barrel_data.partner_id.id == rec.partner_id.id:
 							table = '<table><tr><th>Orden de Venta</th><th>Nro Factura</th><th>Fecha Factura</th><th>Nro Remito</th><th>Nro Barril</th><th>Antiguedad</th><th>Retira</th><th>Firma</th></tr>'
 							table = table + '<tr><td>' + str(b.origin) + '</td><td> </td><td> </td><td>' + str(b.picking_id.name) + '</td><td>' + str(nro_barril) + '</td><td></td><td> </td><td> </td></tr>'
