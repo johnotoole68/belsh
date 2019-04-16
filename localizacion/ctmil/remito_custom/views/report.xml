@@ -3,10 +3,10 @@
   
   <record id="belsh_report_picking" model="ir.ui.view">
         <field name="name">belsh.report.picking</field>
-        <field name="inherit_id" ref="stock.report_picking"/>
+        <field name="inherit_id" ref="stock.report_deliveryslip"/>
         <field name="arch" type="xml">
                 <xpath expr="//div[@class='page']" position="inside">
-                        <span>HOLA MUNDO</span>
+                        <field name="barril" widget="html" />
                 </xpath>
         </field>
     </record>
