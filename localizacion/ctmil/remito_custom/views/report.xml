@@ -5,7 +5,7 @@
         <field name="name">belsh.report.picking</field>
         <field name="inherit_id" ref="stock.report_deliveryslip"/>
         <field name="arch" type="xml">
-                <xpath expr="//div[@class='page']" position="inside">
+                <xpath expr="//t[@t-call='stock.report_delivery_document']" position="inside">
                         <field name="barril" widget="html" />
                 </xpath>
         </field>
