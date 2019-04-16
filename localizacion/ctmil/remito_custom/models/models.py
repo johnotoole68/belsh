@@ -27,7 +27,7 @@ class BelshStockPicking(models.Model):
 
 					if quant_ids:
 						if quant_ids[-1].location_id.id == 9:
-							locs.append(quant_ids[-1].history_ids)
+							locs.append(quant_ids[-1].history_ids[-1])
 
 					if locs:
 						for his in locs:
