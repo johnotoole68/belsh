@@ -29,7 +29,7 @@ class BelshStockPicking(models.Model):
 							barrel_data.append(locs[-1])
 
 					if barrel_data:
-						if rec.partner_id.id == barrel_data[0].partner_id.id
+						if rec.partner_id.id == barrel_data[0].partner_id.id:
 							table = table + " " + str(barrel_data[0].origin) + ", " + str(nro_barril) + ";"
 					"""if barrel_data:
 						if barrel_data.partner_id == rec.partner_id:
