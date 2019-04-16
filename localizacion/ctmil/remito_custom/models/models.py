@@ -38,7 +38,7 @@ class BelshStockPicking(models.Model):
 									barrel_data.append(h_res[-1])
 
 					if barrel_data:
-						table = '<table><tr><th>Orden de Venta</th><th>Nro Factura</th><th>Fecha Factura</th><th>Nro Remito</th><th>Nro Barril</th><th>Antigüedad</th><th>Retira</th><th>Firma</th></tr>'
+						table = '<table><tr><th>Orden de Venta</th><th>Nro Factura</th><th>Fecha Factura</th><th>Nro Remito</th><th>Nro Barril</th><th>Antiguedad</th><th>Retira</th><th>Firma</th></tr>'
 						for b in barrel_data:
 							if b.partner_id.id == self.partner_id.id:
 								table = table + '<tr><td>' + str(b.origin.name) + '</td><td> </td><td> </td><td>' + str(b.picking_id.name) + '</td><td>' + nro_barril + '</td><td></td><td> </td><td> </td></tr>'
