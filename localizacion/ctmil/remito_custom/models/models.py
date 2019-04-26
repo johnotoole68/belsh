@@ -35,13 +35,14 @@ class BelshStockPicking(models.Model):
 						if rec.partner_id.id == barrel_data[0].partner_id.id:
 							account = self.env['account.invoice'].search([('origin', '=', barrel_data[0].origin)])
 							inv_num = ''
-							date_invoice = ''
 							days = ''
 							if account:
 								inv_num = account.document_number
 								date_invoice = account.date_invoice
 								delta = date.today() - date_invoice
 								days = str(delta.days)
+							else:
+								date_invoice = ''
 
 							table = table + '<tr><td>' + str(barrel_data[0].origin) + '</td><td>' + inv_num + '</td><td>' + str(date_invoice) + '</td><td>' + str(barrel_data[0].picking_id.name) + '</td><td>' + str(nro_barril) + '</td><td>' + days + '</td><td> </td><td> </td></tr>'
 
