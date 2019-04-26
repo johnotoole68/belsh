@@ -39,7 +39,7 @@ class BelshStockPicking(models.Model):
 								inv_num = account.document_number
 								date_invoice = account.date_invoice
 
-							table = table + '<tr><td>' + str(barrel_data[0].origin) + '</td><td>' + inv_num + '</td><td>' + str(date_invoice.strptime('%d/%m/%Y')) + '</td><td>' + str(barrel_data[0].picking_id.name) + '</td><td>' + str(nro_barril) + '</td><td></td><td> </td><td> </td></tr>'
+							table = table + '<tr><td>' + str(barrel_data[0].origin) + '</td><td>' + inv_num + '</td><td>' + str(datetime.strptime(date_invoice, '%d/%m/%Y')) + '</td><td>' + str(barrel_data[0].picking_id.name) + '</td><td>' + str(nro_barril) + '</td><td></td><td> </td><td> </td></tr>'
 
 				if table:
 					rec.barril = '<table style="width:100%;" class="table table-bordered"><thead><tr><th>Orden de Venta</th><th>Nro Factura</th><th>Fecha Factura</th><th>Nro Remito</th><th>Nro Barril</th><th>Antiguedad</th><th>Retira</th><th>Firma</th></tr></thead><tbody>' + table + '</tbody></table>'
