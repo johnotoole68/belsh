@@ -37,7 +37,7 @@ class BelshStockPicking(models.Model):
 							inv_num = ''
 							date_invoice = ''
 							days = ''
-							if account.datainvoice:
+							if account.data_invoice:
 								inv_num = account.document_number
 								date_invoice = datetime.strptime(account.date_invoice, '%Y-%m-%d')
 								delta = datetime.today() - date_invoice
