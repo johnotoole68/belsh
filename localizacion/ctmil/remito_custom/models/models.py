@@ -39,9 +39,10 @@ class BelshStockPicking(models.Model):
 							days = ''
 							if account:
 								inv_num = account.document_number
-								date_invoice = datetime.strptime(account.date_invoice, '%Y-%m-%d')
-								delta = datetime.today() - date_invoice
-								days = str(delta.days)
+								if account.date_invoice != False:
+									date_invoice = datetime.strptime(account.date_invoice, '%Y-%m-%d')
+									delta = datetime.today() - date_invoice
+									days = str(delta.days)
 
 							table = table + '<tr><td>' + str(barrel_data[0].origin) + '</td><td>' + inv_num + '</td><td>' + str(date_invoice.strftime('%d/%m/%Y')) + '</td><td>' + str(barrel_data[0].picking_id.name) + '</td><td>' + str(nro_barril) + '</td><td>' + days + '</td><td> </td><td> </td></tr>'
 
