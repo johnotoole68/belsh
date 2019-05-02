@@ -11,7 +11,7 @@
         </field>
     </record>
 
-   <!--record id="belsh_report_picking_view" model="ir.ui.view">
+   <record id="belsh_report_picking_view" model="ir.ui.view">
         <field name="name">belsh.report.picking.view</field>
         <field name="inherit_id" ref="stock.view_picking_form"/>
 	<field name="model">stock.picking</field>
@@ -20,7 +20,7 @@
                         <field name="barril" string="Barriles" />
                 </xpath>
         </field>
-    </record-->
+    </record>
 
 
  </data>
