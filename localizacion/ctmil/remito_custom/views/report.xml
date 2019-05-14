@@ -6,7 +6,10 @@
         <field name="inherit_id" ref="stock.report_delivery_document"/>
         <field name="arch" type="xml">
                 <xpath expr="//div[@class='page']" position="inside">
-                        <div t-field="o.barril" widget="html" />
+			<t t-if="o.barril">
+				<h4>Listado de Barriles en poder del Cliente</h4>
+                        	<div t-field="o.barril" widget="html" />
+			</t>
                 </xpath>
         </field>
     </record>
