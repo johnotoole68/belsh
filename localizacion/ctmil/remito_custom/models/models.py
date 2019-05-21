@@ -48,8 +48,10 @@ class BelshStockPicking(models.Model):
 
 				if table:
 					rec.barril = '<table style="width:100%;" class="table table-bordered"><thead><tr><th>Orden de Venta</th><th>Nro Factura</th><th>Fecha Factura</th><th>Nro Remito</th><th>Nro Barril</th><th>Antiguedad</th><th>Retira</th><th>Firma</th></tr></thead><tbody>' + table + '</tbody></table>'
+				else:
+					rec.barril = '<p>El cliente no tiene barriles en su poder en este momento</p>'
 		else:
 			for rec in self:
-				rec.barril = ''
+				rec.barril = '<p>El cliente no tiene barriles en su poder en este momento</p>'
 
 	barril = fields.Html('Barriles', compute=_barrels_stock)
